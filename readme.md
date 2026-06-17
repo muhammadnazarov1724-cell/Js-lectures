@@ -11,6 +11,14 @@
  // stop calling recurse()
  }
  console.log(recurse())**
+
+function solution (n) {
+  if (n=== 0) {
+    return 1;
+  }
+  return n * solution(n - 1);
+ }
+
  <img src="./Снимок экрана 2026-06-17 в 11.25.07.png" />
  
 
@@ -25,6 +33,13 @@
  return (m) => {
  return n * m ;
  }
+
  }
- console.log (closure (10)(5))**
+ console.log (closure (10)(5))
+ function closure() {
+  let cnt = 0;
+  return () => {
+    return cnt += 1;
+  }
+}
   <img src="./Снимок экрана 2026-06-17 в 11.27.07.png" alt=""/>
