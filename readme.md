@@ -11,6 +11,7 @@
  // stop calling recurse()
  }
  console.log(recurse())**
+ <img src="./Снимок экрана 2026-06-17 в 11.25.07.png" />
  
 
 
@@ -26,3 +27,4 @@
  }
  }
  console.log (closure (10)(5))**
+  <img src="./Снимок экрана 2026-06-17 в 11.27.07.png" alt=""/>

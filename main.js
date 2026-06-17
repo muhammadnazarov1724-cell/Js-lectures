@@ -37,10 +37,10 @@
 
 
 
-function solution(str) {
-  if (str.length === 0) {
-    return "";
+function closure() {
+  let cnt = 0;
+  return () => {
+    return cnt += 1;
   }
-  return solution(str.slice(1)) + str[0]
 }
-console.log("hello")
+console.log("")
