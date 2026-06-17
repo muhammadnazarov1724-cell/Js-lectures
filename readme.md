@@ -29,7 +29,7 @@ function solution (n) {
 **Замакание = Функция + Её логическая окружения ( lexical Environment ).**
 
  ### Syntaxis of Closure 
-  ```js
+```js
  **function closure (n) {
  return (m) => {
  return n * m ;
