@@ -2,6 +2,7 @@
  **1.Recursion -** Як тарзи навишти функция хаст, **Рекурсия** як функцияе ҳаст ки худашро дар даруни худаш визв мекунад ва агар то дар дарунаш шарт (condition) намонем вай бесконечни кор мекунад.
 
  ### Syntaxis of Recursion
+ ```js
  **function recurse () {
  if (condition) {
  recurse ();
@@ -18,8 +19,7 @@ function solution (n) {
   }
   return n * solution(n - 1);
  }
-
- <img src="./Снимок экрана 2026-06-17 в 11.25.07.png" />
+```
  
 
 
@@ -29,6 +29,7 @@ function solution (n) {
 **Замакание = Функция + Её логическая окружения ( lexical Environment ).**
 
  ### Syntaxis of Closure 
+  ```js
  **function closure (n) {
  return (m) => {
  return n * m ;
@@ -42,4 +43,4 @@ function solution (n) {
     return cnt += 1;
   }
 }
-  <img src="./Снимок экрана 2026-06-17 в 11.27.07.png" alt=""/>
+```

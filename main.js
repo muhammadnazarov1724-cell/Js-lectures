@@ -37,10 +37,16 @@
 
 
 
-function closure() {
-  let cnt = 0;
-  return () => {
-    return cnt += 1;
+function solution(str) {
+  let res = "";
+  for (let elem of str) {
+    let cnt = 0;
+    for (let elem2 of str) {
+     if (elem === elem2) {
+      cnt ++;
+     } 
+    }    
   }
+  return cnt;
 }
-console.log("")
+console.log("aaabbbddaacccadbc")
