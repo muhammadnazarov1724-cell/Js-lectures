@@ -37,16 +37,105 @@
 
 
 
-function solution(str) {
-  let res = "";
-  for (let elem of str) {
-    let cnt = 0;
-    for (let elem2 of str) {
-     if (elem === elem2) {
-      cnt ++;
-     } 
-    }    
-  }
-  return cnt;
+// function solution(str) {
+//   let res = "";
+//   for (let elem of str) {
+//     let cnt = 0;
+//     if (res.includes(elem)) {
+//       continue;
+//     }
+//     for (let elem2 of str) {
+//      if (elem === elem2) {
+//       cnt ++;
+//      } 
+//     }
+//     res += elem + cnt;
+//   }
+//   return res
+// }
+// console.log(solution("abbcccddddeeeee"))
+
+// function main (str) {
+//  if (str.length === 1) {
+//   return true;
+//  }
+//  if (str == "") {
+//   return false;
+//  }
+//  if (str.at(0) !== str.at(-1)) {
+//   return false;
+//  }
+//  return main(str.slice(1, -1))
+// }
+// console.log(main("madam"));
+
+//  [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40]
+
+
+// function main (arr) {
+//   if (arr.length === 1) {
+//     return arr[0]
+//   }
+//   let res = main(arr.slice(1))
+
+//   if (arr[0] > res) {
+//     return arr[0];
+//   }
+//   else {
+//     return res;
+//   }
+// }
+// console.log(main([10,5,8,9]));
+
+
+// function main (n) {
+//   if (n < 10) {
+//     return 1;
+//   }
+//   return 1 + main(~~(n / 10))
+// }
+// console.log(main(88488));
+
+
+// function solution(str) {
+//   let res = 0;
+//   let aphUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//   for (let elem of str) {
+//     if (aphUpper.includes(elem))
+//      res ++;
+//   }
+//    return res;
+// }
+//  console.log(solution("are you ready"));   
+
+
+
+// do {
+// console.log(i)
+// i ++
+// } while (i < 5) 
+// i ++ 
+//
+
+ 
+// function main (str) {
+//   let cnt = 0;
+//   let spl = str.split(" ")
+//   let vow = "aeuioAEUIO"
+//   for (let elem of spl) {
+//     if (vow.includes(elem.at(0))) {
+//       cnt ++;
+//     }
+//   }
+//   return cnt;
+// }
+// console.log(main("is this yousr"));
+
+function solution(arr, n) {
+function solution(arr) {
+  return arr.split(" ").join("");
 }
-console.log("aaabbbddaacccadbc")
+}
+console.log(solution([1,2,3,4,5], 10));
+
+
