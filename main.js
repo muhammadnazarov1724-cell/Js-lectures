@@ -110,13 +110,6 @@
 
 
 
-// do {
-// console.log(i)
-// i ++
-// } while (i < 5) 
-// i ++ 
-//
-
  
 // function main (str) {
 //   let cnt = 0;
@@ -131,11 +124,34 @@
 // }
 // console.log(main("is this yousr"));
 
-function solution(arr, n) {
+// function solution (str) {
+//   let cnt = 0
+//   let vow = "aeuioAEUIO" 
+//   let spl = str.split(" ")
+//   let res = "";
+//  for (let elem of spl) {
+//     res += elem.at(0).toUpperCase() + elem.slice(1).toLowerCase() + " ";
+//   }
+//   return res + " "
+// }
+// console.log(solution("softCLub iS aWeSome"));
+
+
+
 function solution(arr) {
-  return arr.split(" ").join("");
+  let od = 0
+  let ev = 0
+  arr.map((elem) => {
+    if (elem % 2 === 0) {
+       ev += elem
+    }
+    else {
+        od += elem
+    }
+
+  }) 
+  return [od,ev]
 }
-}
-console.log(solution([1,2,3,4,5], 10));
+console.log(solution([1 ,2 ,3, 4, 5, 6]));
 
 

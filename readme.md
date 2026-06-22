@@ -1,81 +1,101 @@
-# Array
-## 1. Массив чист?
-Массив як маҷмӯи мураттабшудаи маълумотҳо аст, ки таҳти як ном нигоҳ дошта мешавад. Массивро ҳамчун як қуттии дорои бахшҳо тасаввур кунед, ки дар он ҳар як бахш рақамгузорӣ шудааст. Шумо метавонед дар ҳар як бахш ягон объект ё арзишро ҷойгир кунед.
-
-Идеяи асосӣ: Массивҳо имкон медиҳанд, ки бисёр арзишҳо дар як тағйирёбанда нигоҳ дошта шаванд.
-
-Намудҳои маълумот: Дар массив ҳама гуна намудҳои маълумотро нигоҳ доштан мумкин аст: ададҳо, сатрҳо, объектҳо, дигар массивҳо ва ҳатто функсияҳо. Шумо метавонед намудҳои гуногуни маълумотро дар як массив омехта кунед.
+# Callback
+### Callback — ин функсияест, ки ҳамчун аргумент (арзиш) ба дохили функсияи дигар интиқол дода мешавад, то ки он дар оянда, пас аз иҷро шудани кадом як амал, даъват (кор фармуда) шавад.
 ## Metods
-- **push()**
-**Ба охир илова кардан**
-**Синтаксис - arr.push(items...)**
-
+### ForEach
+***Танҳо гузаштани элементҳо (иҷрои амалҳо)**
+***arr.forEach((elem, ind, array) => {})**
 ```js
-let fruits = ["Apple", "Banana"];
-fruits.push("Orange");
-console.log(fruits); // ["Apple", "Banana", "Orange"]
+function solution(arr) {
+  let sum = 1;
+  arr.forEach((elem) => {
+    sum *= elem
+  })
+  return sum
+}
 ```
-
-- **pop()**
-**Аз охир нест кардан**
-**Синтаксис - arr.push(items...)**
-
-```js
-let fruits = ["Apple", "Banana", "Orange"];
-let lastFruit = fruits.pop();
-console.log(lastFruit); // "Orange"
-console.log(fruits); // ["Apple", "Banana"]
-```
-
-- **shift()**
-**Аз аввал нест кардан**
-**Синтаксис - arr.shift()**
-
-```js
-let fruits = ["Apple", "Banana", "Orange"];
-let firstFruit = fruits.shift();
-console.log(firstFruit); // "Apple"
-console.log(fruits); // ["Banana", "Orange"]
-```
-
-- **unshift()**
-**Ба аввал илова кардан**
-**Синтаксис - arr.unshift(items...)**
-
-```js
-let fruits = ["Banana", "Orange"];
-fruits.unshift("Apple", "Mango");
-console.log(fruits); // ["Apple", "Mango", "Banana", "Orange"]
-```
-
-- **splice()**
-**Илова/Нест/Иваз кардан**
-**Синтаксис - arr.splice(idx, n, items...)**
-
-```js
-let fruits = ["Apple", "Banana", "Orange"];
-fruits.splice(1, 1, "Grapes", "Kiwi"); // Удалить 1 элемент со 2-го индекса и вставить 2 новых
-console.log(fruits); // ["Apple", "Grapes", "Kiwi", "Orange"]
-```
-
-- **concat()**
-**Массивҳоро муттаҳид кардан**
-**Синтаксис - arr.concat(arrs/items...)**
-
-```js
-let fruits1 = ["Apple", "Banana"];
-let fruits2 = ["Orange", "Grapes"];
-let fruits3 = ["Mango"];
-let allFruits = fruits1.concat(fruits2, fruits3, "Kiwi");
-console.log(allFruits); // ["Apple", "Banana", "Orange", "Grapes", "Mango", "Kiwi"]
-```
-
-- **reverse()**
-**Баръакс кардан**
-**Синтаксис - arr.reverse()**
-
+### Map
+**Трансформатсия (тағйир додани) элементҳо**
+**arr.map(function(item) { ... })**
 ```js
 let numbers = [1, 2, 3, 4, 5];
-numbers.reverse();
-console.log(numbers); // [5, 4, 3, 2, 1]
+let squaredNumbers = numbers.map(n => n * n);
+console.log(squaredNumbers); // [1, 4, 9, 16, 25]
+```
+
+### Find
+**Ҷустуҷӯи як элемент**
+**arr.find(function(item) { ... })**
+```js
+let users = [
+    { id: 1, name: "Alice" },
+    { id: 2, name: "Bob" },
+    { id: 3, name: "Charlie" }
+];
+let user = users.find(u => u.id === 2);
+console.log(user); // { id: 2, name: "Bob" }
+
+let nonExistentUser = users.find(u => u.name === "David");
+console.log(nonExistentUser); // undefined
+```
+
+### filter
+**Филтратсияи элементҳо аз рӯи шарт**
+**arr.filter(function(item) { ... })**
+```js
+let numbers = [1, 2, 3, 4, 5];
+let evenNumbers = numbers.filter(n => n % 2 === 0);
+console.log(evenNumbers); // [2, 4]
+```
+
+### Reduce
+**Ҷамъбасти маълумот ба як қиммат**
+**arr.reduce(function(accumulator, currentValue, index, array) { ... }, initialValue)**
+```js
+let numbers = [1, 2, 3, 4, 5];
+let sum = numbers.reduce((acc, n) => acc + n, 0); // Начальное значение 0
+console.log(sum); // 15
+```
+
+### Sort
+**Сортировка (тартиб додан) дар ҷои худ**
+**arr.sort(compareFunction)**
+```js
+let fruits = ["Banana", "Apple", "Orange", "Grapes"];
+fruits.sort();
+console.log(fruits); // ["Apple", "Banana", "Grapes", "Orange"]
+```
+
+### Some
+**Санҷиш: оё ақаллан як элемент мувофиқ аст?**
+**массив.some((element) => {});**
+```js
+const рақамҳо = [1, 3, 5, 8, 9];
+
+const ҳастҶуфт = рақамҳо.some(num => num % 2 === 0);
+
+console.log(ҳастҶуфт); // true (чунки 8 ҷуфт аст)
+```
+
+### Every
+**Санҷиш: оё ҳамаи элементҳо мувофиқанд?**
+**массив.every((element) => {});**
+```js
+const нархҳо = [100, 250, 400];
+
+const ҳамаГрон = нархҳо.every(price => price > 0);
+
+console.log(ҳамаГрон); // true (чунки ҳамаашон аз 0 калонанд)
+```
+
+### toSorted
+**Сортировка бе мутатсия (тағйирот)**
+**const sort = массив.toSorted();**
+```js
+const баҳоҳо = [5, 2, 4, 3];
+
+// Массиви навро месозем
+const баҳоҳоиТартибшуда = баҳоҳо.toSorted((a, b) => a - b);
+
+console.log(баҳоҳо);               // [5, 2, 4, 3] (массиви аввала тағйир наёфт!)
+console.log(баҳоҳоиТартибшуда);    // [2, 3, 4, 5] (массиви нав тартиб дода шуд)
 ```
