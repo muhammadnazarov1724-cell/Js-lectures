@@ -138,20 +138,38 @@
 
 
 
-function solution(arr) {
-  let od = 0
-  let ev = 0
-  arr.map((elem) => {
-    if (elem % 2 === 0) {
-       ev += elem
-    }
-    else {
-        od += elem
-    }
+// function isPrime(n) {
+//   for (let i = 2; i < n; i++) {
+//     if (n % i === 0) {
+//       return false
+//     }
+//   }
+//   return true
+// }
 
-  }) 
-  return [od,ev]
-}
-console.log(solution([1 ,2 ,3, 4, 5, 6]));
+//  function isPrimeArray(arr) {
+//     let cnt = 0;
+//     for (let elem of arr) {
+//         if (isPrime(elem)) {
+//             cnt ++
+//         }
+//     }
+//     return cnt
+//  }
+
+// console.log(isPrimeArray([7,13,2,6,4]))
+                                           
+// function solution(arr) {
+//   let uniqueWords = arr.filter((word) => arr.indexOf(word) === arr.lastIndexOf(word));
+  
+//   if (uniqueWords.length === 0) return 0;
+
+//   let lengths = uniqueWords.map((word) => word.length);
+
+//   return Math.max(...lengths);
+// }
+// console.log(solution("dog", "elephanr", "cat", "lion"));
+
+
 
 
