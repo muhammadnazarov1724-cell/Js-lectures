@@ -172,4 +172,12 @@
 
 
 
+function solution (obj) {
+  let res = {}
+  for (let key in obj) {
+    res[key.toUpperCase()] = obj[key]    
+  }                                  
+  return res
+}
+console.log(solution({aue: 1, bib: 2}));
 

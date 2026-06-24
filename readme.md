@@ -52,3 +52,75 @@ const ball = {
   size: 5,
   isOriginal: true
 };
+```
+
+## Доступ к свойствам
+```js 
+// 1. Через точку (основной способ)
+console.log(ball.brand); // "Adidas"
+
+// 2. Через квадратные скобки (если ключ динамический или из переменной)
+const keyName = "size";
+console.log(ball[keyName]); // 5
+```
+
+## Изменение и добавление
+```js
+ball.size = 4;        // Изменение существующего свойства
+ball.color = "white"; // Добавление нового свойства
+```
+
+## Удаление свойств
+```js
+delete ball.isOriginal;
+```
+
+## 5. Встроенные методы Object.*
+Позволяют работать со структурой объекта как с массивом. Данные методы принимают объект в качестве аргумента.
+```js 
+const laptop = { brand: "Apple", model: "MacBook Air" };
+```
+- Object.keys(obj) — массив ключей:
+```js
+Object.keys(laptop); // ["brand", "model"]
+```
+- Object.values(obj) — массив значений:
+```js
+Object.values(laptop); // ["Apple", "MacBook Air"]
+```
+- Object.entries(obj) — массив пар [ключ, значение]:
+```js
+Object.entries(obj) — массив пар [ключ, значение]:
+```
+## 6. Вложенные объекты
+Значением свойства объекта может быть другой объект, что позволяет создавать глубокие структуры.
+```js
+const user = {
+  id: 42,
+  name: "Алексей",
+  contacts: {
+    email: "alex@example.com",
+    phone: "+992900000000"
+  }
+};
+
+console.log(user.contacts.email); // "alex@example.com"
+```
+## 7. Перебор объектов
+Способ 1: Цикл for...in (Специально для объектов)
+```js 
+const RGB = { red: "#ff0000", green: "#00ff00" };
+
+for (let key in RGB) {
+  console.log(`Ключ: ${key}, Значение: ${RGB[key]}`); // Важно: используем квадратные скобки
+}
+```
+
+- **Способ 2: Object.entries() + for...of (Современный метод)**
+```js 
+const shirt = { size: "L", material: "cotton" };
+
+for (const [key, value] of Object.entries(shirt)) {
+  console.log(`${key} -> ${value}`);
+}
+```
